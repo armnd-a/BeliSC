@@ -9,7 +9,7 @@ exports.run = {
          let member = participants.map(v => v.id)
          let message = (!text) ? 'Hello member ' + await (await client.groupMetadata(m.chat)).subject + ' group.' : text
          client.sendMessageModify(m.chat, `*${message}*\n${readmore}\n${member.map(v => '	◉  @' + v.replace(/@.+/, '')).join('\n')}`, m, {
-            title: '📢 Pemberitahuan all member',
+            title: 'IMPORTANT INFORMATION',
             largeThumb: true,
             thumbnail: await Func.fetchBuffer('https://telegra.ph/file/8767ff5f2252dafbf317b.jpg')
             })
