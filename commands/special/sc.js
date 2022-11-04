@@ -13,11 +13,11 @@ exports.run = {
 ]
 
 const buttonMessage = {
-   caption: "*BIG THANKS TO*\n\n• wildan Izzuddin\n• acuy\n• faruq\n• mel\n• adara cantik\n• aprildv\n• DiaryNikii\n• All creator bot",
+   caption: "*BIG THANKS TO*\n\n• wildan Izzuddin\n• acuy\n• faruq\n• mel\n• adara cantik\n• aprildv\n• DiaryNikii\n• armand\n• All creator bot",
    footer: 'Rikka bot',
    buttons: buttons,
    document: {
-       url: 'https://telegra.ph/file/b7ad2a779a31241f0af1a.jpg'
+       url: 'https://telegra.ph/file/3c117775d3122457c19ec.jpg'
     },
    headerType: 4,
    mimetype: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
@@ -30,9 +30,9 @@ const buttonMessage = {
          mediaType: 2,
          renderLargerThumbnail: false,
          showAdAttribution: true,
-         title: `Script BOT? Klik ini\nAktif selama ${Func.toTime(process.uptime() * 1000)}`,
-         thumbnail: await Func.fetchBuffer('https://telegra.ph/file/b7ad2a779a31241f0af1a.jpg'),
-         sourceUrl: 'https://wa.me/6285807264974?text=script+nya+pengen+dong+bang'
+         title: `Tap!\nAktif selama ${Func.toTime(process.uptime() * 1000)}`,
+         thumbnail: await Func.fetchBuffer('https://telegra.ph/file/3c117775d3122457c19ec.jpg'),
+         sourceUrl: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW'
       }
    }
 }
