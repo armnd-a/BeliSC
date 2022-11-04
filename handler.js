@@ -82,7 +82,7 @@ module.exports = async (client, m, chatUpdate) => {
             if (!users.whitelist && m.text && (m.text.charAt(0) == myPrefix || Func.socmed(m.text)) && !/owner|premium|sewabot|batu|gunting|kertas/.test(m.text)) return client.sendMessageModify(m.chat, Func.texted('bold', `bot sedang dalam mode : khusus group*\n\nTidak bisa menggunakan bot di pesan pribadi\njika kamu ingin menggunakan di pesan pribadi\n*silahkan upgrade premium hanya 10rb*\nSilahkan ketik *.owner / .premium`), m, {
             largeThumb: true,
             thumbnail: await Func.fetchBuffer('https://telegra.ph/file/73cb2b865ab3beef12bf1.jpg'),
-            url: 'https://chat.whatsapp.com/EARvthLENgw2yxhDUKDuMr'
+            url: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW'
          })            
          }
          if (m.msg && m.msg.type == 0) {
@@ -145,7 +145,7 @@ module.exports = async (client, m, chatUpdate) => {
                var cBad = groupSet.member[m.sender].warning += 1
                var warning = groupSet.member[m.sender].warning
                if (warning > 4) {
-                  client.reply(m.chat, Func.texted('bold', `di diemin ngelunjak, gue kick mampus lu`), m).then(() => {
+                  client.reply(m.chat, Func.texted('bold', `di diemin ngelunjak KONTOL,Dikick nanti nangis`), m).then(() => {
                      client.groupParticipantsUpdate(m.chat, [m.sender], 'remove').then(() => {
                         groupSet.member[m.sender].warning = 0
                         client.sendFile(m.chat, require('fs').readFileSync('./media/audio/tmpq7mpzzl9.mp3'), '', '', m, {
