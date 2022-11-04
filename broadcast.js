@@ -9,7 +9,7 @@ exports.run = {
             if (!m.quoted) return client.reply(m.chat, Func.texted('bold', `Reply Message.`), m)
             let group = await (await client.groupList()).map(v => v.id)
             let buttons = [{
-                buttonId: `${isPrefix}owner`
+                buttonId: `${isPrefix}owner`,
                 buttonText: {
                    displayText: 'OWNER'
                },
