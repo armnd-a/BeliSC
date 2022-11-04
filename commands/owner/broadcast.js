@@ -9,10 +9,9 @@ exports.run = {
          if (!m.quoted) return client.reply(m.chat, Func.texted('bold', `Reply pesan nya kak.`), m)
          let group = await (await client.groupList()).map(v => v.id)
          let buttons = [{
-            urlButton: {
-               displayText: `sewa bot`,
-               url: `https://wa.me/62882002088799?text=topup+bang`
-            }
+            buttonId: `${isPrefix}owner`,
+                buttonText: {
+                   displayText: 'OWNER'
          }]
          if (/image/.test(m.quoted.mtype)) {
             let media = await m.quoted.download()
