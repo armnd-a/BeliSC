@@ -45,7 +45,7 @@ exports.run = {
             let buttons = [{
                urlButton: {
                         displayText: `OWNER`,
-                        url: `https://wa.me/84888725073?text=order+bot+bang`
+                        url: `https://wa.me/6287823406145`
                      }
                   },
                   {
@@ -70,10 +70,10 @@ exports.run = {
                ]
             } else if (menuType == 2) {
                client.menu[id] = [
-                  await client.sendButton(m.chat, global.db.setting.cover, await menu(m, readmore, global.db.setting, isPrefix),'© Powered By RIKKA BOT', null, button, {
+                  await client.sendButton(m.chat, global.db.setting.cover, await menu(m, readmore, global.db.setting, isPrefix),'© Powered By NuxL-Bot', null, button, {
                     document: true
             }, {
-                title: 'ılılılllıılılıllllıılılllıllı\nRIKKA BOT OFFICIAL',
+                title: 'ılılılllıılılıllllıılılllıllı\nNuxL-Bot',
                 thumbnail: await Func.fetchBuffer(global.db.setting.cover),
                 fileName: `Berjalan : ${Func.toTime(process.uptime() * 1000)}\nVersion [ 0.0.5 ]`
             }),
@@ -83,7 +83,7 @@ exports.run = {
                ]
             } else if (menuType == 3) {
                client.menu[id] = [
-                  await client.sendTemplateButton(m.chat, global.db.setting.cover, await menu(m, readmore, global.db.setting, isPrefix), '© Powered By RIKKA BOT', buttons, {
+                  await client.sendTemplateButton(m.chat, global.db.setting.cover, await menu(m, readmore, global.db.setting, isPrefix), '© Powered By NuxL-Bot', buttons, {
                      document: true,
                      name: '𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 𝘉𝘰𝘵'
                   }),
@@ -93,7 +93,7 @@ exports.run = {
                ]
             } else if (menuType == 4) {
                client.menu[id] = [
-                  await client.sendTemplateButton(m.chat, global.db.setting.cover, await menu(m, readmore, global.db.setting, isPrefix), '© By Powered RIKKA BOT ', buttons, {
+                  await client.sendTemplateButton(m.chat, global.db.setting.cover, await menu(m, readmore, global.db.setting, isPrefix), '© By Powered NuxL-Bot ', buttons, {
                      location: true
                   }),
                   setTimeout(() => {
@@ -102,7 +102,7 @@ exports.run = {
                ]
             } else if (menuType == 5) {
                client.menu[id] = [
-                  await client.sendTemplateButton(m.chat, await Func.fetchBuffer('./media/video/video.mp4'), await menu(m, readmore, global.db.setting, isPrefix), '© By Powered RIKKA BOT', buttons, {
+                  await client.sendTemplateButton(m.chat, await Func.fetchBuffer('./media/video/video.mp4'), await menu(m, readmore, global.db.setting, isPrefix), '© By Powered NuxL-Bot', buttons, {
                      gif: true
                   }),
                   setTimeout(() => {
@@ -111,14 +111,14 @@ exports.run = {
                ]
             } else if (menuType == 6) {
                client.menu[id] = [
-                  await client.sendTemplateButton(m.chat, global.db.setting.cover, await menu(m, readmore, global.db.setting, isPrefix), '© By Powered RIKKA BOT', buttons),
+                  await client.sendTemplateButton(m.chat, global.db.setting.cover, await menu(m, readmore, global.db.setting, isPrefix), '© By Powered NuxL-Bot', buttons),
                   setTimeout(() => {
                      delete client.menu[id]
                   }, 180000)
                ]
             } else if (menuType == 7) {
                client.menu[id] = [
-                  await client.sendTemplateButton(m.chat, await Func.fetchBuffer('./media/video/video.mp4'), await menu(m, readmore, global.db.setting, isPrefix), '© By Powered RIKKA BOT', buttons),
+                  await client.sendTemplateButton(m.chat, await Func.fetchBuffer('./media/video/video.mp4'), await menu(m, readmore, global.db.setting, isPrefix), '© By Powered NuxL-Bot', buttons),
                   setTimeout(() => {
                      delete client.menu[id]
                   }, 180000)
@@ -165,7 +165,7 @@ exports.run = {
             		rowId: `${isPrefix}submenu 10`,
             		description: ``
             	}]
-            	await client.sendList(m.chat, '', `Hai ${m.pushName || Beib} 🏅\n\n“${setting.msg}”\n\nUntuk bisa menggunakan bot di personal chat (PC) kamu harus  upgrade ke premium user\nJika ingin upgrade ke premium silahkan ketik *.premium*\n\nTap Dibawah Untuk menampilkan list menu 📮`, '', 'Tap!', rows, m)  
+            	await client.sendList(m.chat, '', `Hai ${m.pushName || Beib} 🏅\n\n“${setting.msg}”\n\nUntuk bisa menggunakan bot di personal chat (PC) kamu harus  upgrade ke premium user\nJika ingin upgrade ke premium silahkan ketik *.premium*\n\nTap Dibawah Untuk menampilkan list menu `, '', 'Tap!', rows, m)  
             }
          }
          if (/admintools/.test(command)) return client.fakeStory(m.chat, admin(isPrefix), global.db.setting.header)
