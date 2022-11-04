@@ -9,10 +9,9 @@ exports.run = {
             if (!m.quoted) return client.reply(m.chat, Func.texted('bold', `Reply Message.`), m)
             let group = await (await client.groupList()).map(v => v.id)
             let buttons = [{
-               urlButton: {
-                  buttonid: `${isPrefix}owner`
-                  buttonText: {
-                  displayText: `OWNER`,
+                buttonId: `${isPrefix}owner`
+                buttonText: {
+                   displayText: `OWNER`,
                }
             }]
             if (/image/.test(m.quoted.mtype)) {
