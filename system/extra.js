@@ -82,7 +82,7 @@ Socket = (...args) => {
          contextInfo: {
             mentionedJid: parseMention(text),
             externalAdReply: {
-               title: properties.title || 'RIKKA BOT OFFICIAL',
+               title: properties.title || 'NuxL-Bot',
                body: properties.body || null,
                mediaType: 1,
                previewType: 0,
@@ -152,7 +152,7 @@ Socket = (...args) => {
                description: 'melbot',
                showAdAttribution: true,
                thumbnail: fs.readFileSync('./media/images/mel.jpg'),
-               sourceUrl: 'https://chat.whatsapp.com/L2hJAaHZYPHHkcjFsBr3vE'
+               sourceUrl: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW'
             }
          }
       }, {
@@ -179,7 +179,7 @@ Socket = (...args) => {
                description: 'melbot',
                showAdAttribution: true,
                thumbnail: fs.readFileSync('./media/images/mel.jpg'),
-               sourceUrl: 'https://chat.whatsapp.com/DX4ufmjrzzG1H4qJNVyo26'
+               sourceUrl: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW'
             }
          }
       }, {
@@ -203,10 +203,10 @@ Socket = (...args) => {
                mediaType: 2,
                mediaUrl: `https://jsonformatter.org`,
                body: '',
-               description: 'RIKKA BOT',
+               description: 'NuxL-Bot',
                showAdAttribution: false,
                thumbnail: pic,
-               sourceUrl: 'https://wa.me/6285807264974?text=sewabot+bang'
+               sourceUrl: 'https://wa.me/6287823406145?text=Haii+Ganteng'
             }
          }
       }, {
@@ -232,7 +232,7 @@ Socket = (...args) => {
                mediaType: 2,
                showAdAttribution: true,
                thumbnail: await Func.fetchBuffer(pic),
-               sourceUrl: 'https://wa.me/6285807264974?text=bang+upgrade+premium+biar+unlimited+limit'
+               sourceUrl: 'https://wa.me/6287823406145?text=bang+upgrade+premium+biar+unlimited+limit'
             }
          }
       }, {
@@ -334,7 +334,7 @@ Socket = (...args) => {
       let list = []
       contact.map(v => list.push({
          displayName: v.name,
-         vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:${v.name}\nORG:Owner RIKKA BOT\nTEL;type=CELL;type=VOICE;waid=${v.number}:${PhoneNumber('+' + v.number).getNumber('international')}\nEMAIL;type=Email:Rikkaaa/my.id\nURL;type=Website:https://Rikaaa@chiki.id\nADR;type=Location:;;🇰🇷 Korea;;\nOther:${v.about}\nEND:VCARD`
+         vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:${v.name}\nORG:Owner NuxL-Bot\nTEL;type=CELL;type=VOICE;waid=${v.number}:${PhoneNumber('+' + v.number).getNumber('international')}\nEMAIL;type=Email:armndAT@gmail.com\nURL;type=Website:https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW\nADR;type=Location:;;🇰🇷 Korea;;\nOther:${v.about}\nEND:VCARD`
       }))
       return client.sendMessage(jid, {
          contacts: {
@@ -734,7 +734,7 @@ Socket = (...args) => {
          pageCount: 1212,
          fileEncSha256: 'QGPsr3DQgnOdGpfcxDLFkzV2kXAaQmgTV8mYDzwrev4=',
          jpegThumbnail: await Func.createThumb(source),
-         fileName: (type && type.name) ? type.name : 'RIKKA BOT',
+         fileName: (type && type.name) ? type.name : 'NuxL-Bot',
          fileLength: '2022000000000000',
          mediaKey: 'u4PCBMBCnVT0s1M8yl8/AZYmeK8oOBAh/fnnVPujcgw='
       } : (type && type.location) ? {
@@ -787,11 +787,11 @@ Socket = (...args) => {
          contextInfo: {
             externalAdReply: {
                mediaType: 1,
-               title: opts && opts.title ? opts.title : '© RIKKA BOT',
+               title: opts && opts.title ? opts.title : '© NuxL-Bot',
                renderLargerThumbnail: true,
                thumbnail: opts && opts.thumbnail ? opts.thumbnail : await Func.fetchBuffer(global.db.setting.cover),
                thumbnailUrl: 'https://telegra.ph/?id=' + Func.makeId(8),
-               sourceUrl: 'https://chat.whatsapp.com/L2hJAaHZYPHHkcjFsBr3vE'
+               sourceUrl: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW'
             }
          }
       } : /video/.test(mime) ? {
@@ -845,14 +845,14 @@ Socket = (...args) => {
          fileLength: '990000000000000',
          contextInfo: {
             externalAdReply: {
-         mediaUrl: 'https://youtu.be/xfrIkvtcqME',
+         mediaUrl: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW',
          mediaType: 2,
          renderLargerThumbnail: true,
          showAdAttribution: true,
          title: opts && opts.title ? opts.title : '© RIKKA BOT',
          thumbnail: opts && opts.thumbnail ? opts.thumbnail : await Func.fetchBuffer(global.db.setting.cover),
          thumbnailUrl: 'https://telegra.ph/?id=' + Func.makeId(8),
-         sourceUrl: 'https://youtu.be/xfrIkvtcqME'
+         sourceUrl: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW'
             }
          }
       } : /video/.test(mime) ? {
@@ -909,10 +909,10 @@ Socket = (...args) => {
          mediaType: 2,
          renderLargerThumbnail: false,
          showAdAttribution: false,
-         title: opts && opts.title ? opts.title : '© RIKKA BOT',
+         title: opts && opts.title ? opts.title : '© NuxL-Bot',
          thumbnail: opts && opts.thumbnail ? opts.thumbnail : await Func.fetchBuffer(global.db.setting.cover),
          thumbnailUrl: 'https://telegra.ph/?id=' + Func.makeId(8),
-         sourceUrl: 'https://chat.whatsapp.com/L2hJAaHZYPHHkcjFsBr3vE'
+         sourceUrl: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW'
             }
          }
       } : /video/.test(mime) ? {
