@@ -14,7 +14,7 @@ exports.run = {
 
 const buttonMessage = {
    caption: "*BIG THANKS TO*\n\n• wildan Izzuddin\n• acuy\n• faruq\n• mel\n• adara cantik\n• aprildv\n• DiaryNikii\n• armand\n• All creator bot",
-   footer: 'Rikka bot',
+   footer: 'NuxL-Bot',
    buttons: buttons,
    document: {
        url: 'https://telegra.ph/file/3c117775d3122457c19ec.jpg'
