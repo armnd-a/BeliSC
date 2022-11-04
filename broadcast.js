@@ -11,8 +11,8 @@ exports.run = {
             let buttons = [{
                 buttonId: `${isPrefix}owner`
                 buttonText: {
-                   displayText: `OWNER`,
-               }
+                   displayText: 'OWNER'
+               },
             }]
             if (/image/.test(m.quoted.mtype)) {
                let media = await m.quoted.download()
