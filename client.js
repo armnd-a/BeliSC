@@ -139,7 +139,7 @@ const start = async () => {
          }
          let txt = (groupSet.textwel != '' ? groupSet.textwel : textwel).replace('+tag', `@${member.split`@`[0]}`).replace('+grup', `${meta.subject}`)
          if (groupSet.welcome) client.sendMessageModify(gc.id, txt, null, {
-                title: 'ılılllıllılllıllıılılllıllılllıllı\n© RIKKA BOT OFFICIAL',
+                title: 'ılılllıllılllıllıılılllıllılllıllı\n© NuxL-Bot WhatsApp',
                 largeThumb: true,
                 thumbnail: pic,
                 url: '',
@@ -148,7 +148,7 @@ const start = async () => {
       } else if (gc.action == 'remove') {
          let txt = (groupSet.textleft != '' ? groupSet.textleft : textleft).replace('+tag', `@${member.split`@`[0]}`).replace('+grup', `${meta.subject}`)
          if (groupSet.left) client.sendMessageModify(gc.id, txt, null, {
-                title: 'ılılllıllılllıllıılılllıllılllıllı\n© RIKKA BOT OFFICIAL',
+                title: 'ılılllıllılllıllıılılllıllılllıllı\n© NuxL-Bot WhatsApp',
                 largeThumb: true,
                 thumbnail: pic,
                 url: '',
