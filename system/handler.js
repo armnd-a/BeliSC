@@ -36,9 +36,9 @@ module.exports = async (client, m, chatUpdate) => {
       if (m.msg && m.msg.viewOnce) {
          let media = await client.downloadMediaMessage(m.msg)
          if (/image/.test(m.mtype)) {
-            client.sendImage(m.chat, media, m.text != '' ? m.text : '© neoxr-bot', m)
+            client.sendImage(m.chat, media, m.text != '' ? m.text : '© NuxL-Bot', m)
          } else if (/video/.test(m.mtype)) {
-            client.sendVideo(m.chat, media, m.text != '' ? m.text : '© neoxr-bot', m)
+            client.sendVideo(m.chat, media, m.text != '' ? m.text : '© NuxL-Bot', m)
          }
       }
       if (m.isBot || m.chat.endsWith('broadcast') || users.banTemp != 0) return
