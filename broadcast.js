@@ -10,8 +10,9 @@ exports.run = {
             let group = await (await client.groupList()).map(v => v.id)
             let buttons = [{
                urlButton: {
-                  displayText: `sewa bot`,
-                  url: `http://nxr.my.id/HHFOR`
+                  buttonid: `${isPrefix}owner`
+                  buttonText: {
+                  displayText: `OWNER`,
                }
             }]
             if (/image/.test(m.quoted.mtype)) {
