@@ -6,7 +6,7 @@ exports.run = {
       client.sendMessageModify(m.chat, info(), m, {
             title: 'D O N A S I',
             largeThumb: true,
-            thumbnail: await Func.fetchBuffer('https://telegra.ph/file/035848cbd019551eac62f.jpg')
+            thumbnail: await Func.fetchBuffer('https://telegra.ph/file/73e119fb7339beee795ce.jpg')
             })         
    },
    error: false,
@@ -23,9 +23,10 @@ let info = () => {
 ┃Bagi Anda yang memiliki saldo lebih
 ┃bisa di donasikan melalui berikut ini.
 ┃
-┃D A N A : [ 0896-5389-6400 ]
-┃P U L S A : [ 0851-5697-2228 ]
-┃G O P A Y : [ 0896-5389-6400 ]
+┃D A N A : [ 0822-8354-1084 ]
+┃P U L S A : [ 0822-8354-1084 ]
+┃P U L S A : [ 0878-2340-6145 ]
+┃O V O : [ 0822-8354-1084 ]
 ┗⬣
 
 note : *donasi seikhlasnya aja*`
