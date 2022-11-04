@@ -1,0 +1,304 @@
+exports.run = {
+   usage: ['submenu'],
+   async: async (m, {
+      client,
+      args,
+      isPrefix
+   }) => {
+      try {
+         const dial = args[0] ? args[0] : 1
+         if (dial == 1) return client.reply(m.chat, submenu1(isPrefix), m)
+         if (dial == 2) return client.reply(m.chat, submenu2(isPrefix), m)
+         if (dial == 3) return client.reply(m.chat, submenu3(isPrefix), m)
+         if (dial == 4) return client.reply(m.chat, submenu4(isPrefix), m)
+         if (dial == 5) return client.reply(m.chat, submenu5(isPrefix), m)
+         if (dial == 6) return client.reply(m.chat, submenu6(isPrefix), m)
+         if (dial == 7) return client.reply(m.chat, submenu7(isPrefix), m)
+         if (dial == 8) return client.reply(m.chat, submenu8(isPrefix), m)
+         if (dial == 9) return client.reply(m.chat, submenu9(isPrefix), m)
+         if (dial ==10) return client.reply(m.chat, submenu10(isPrefix), m)    
+      } catch (e) {
+         console.log(e)
+      }
+   },
+   error: false,
+   cache: true,
+   location: __filename
+}
+
+const submenu1 = (prefix) => {
+return `*❏*  *I N F O R M A T I O N*
+
+	›  ${prefix}buy
+	›  ${prefix}claim
+	›  ${prefix}limit
+	›  ${prefix}me
+	›  ${prefix}point
+	›  ${prefix}profile
+	›  ${prefix}toplocal
+	›  ${prefix}topglobal
+	›  ${prefix}topuser
+	›  ${prefix}topuserlocal
+	
+${global.setting.footer}`
+}
+
+const submenu2 = (prefix) => {
+return `*❏* *M O D E - G A M E*
+
+	›  ${prefix}brainout
+	›  ${prefix}coin *A* / *B*
+	›  ${prefix}math *mode*
+	›  ${prefix}riddle
+	›  ${prefix}slot
+	›  ${prefix}spin *point*
+	›  ${prefix}ttt
+	›  ${prefix}ttt *room*
+	›  ${prefix}tictactoe
+	›  ${prefix}tebaklirik
+	›  ${prefix}tebaktebakan
+	›  ${prefix}caklontong
+	›  ${prefix}whatsong
+	›  ${prefix}whatword
+	›  ${prefix}whoami
+	›  ${prefix}truth
+	›  ${prefix}dare
+	›  ${prefix}apakah
+	›  ${prefix}kapankah
+	›  ${prefix}siapakah
+	
+${global.setting.footer}`
+}
+	
+const submenu3 = (prefix) => {
+return `*❏* *A D M I N*
+
+	›  ${prefix}mute *1 / 0*
+	›  ${prefix}tagall
+	›  ${prefix}hidetag *text*
+	›  ${prefix}kick *reply / tag*
+	›  ${prefix}demote *reply / tag*
+	›  ${prefix}mark *reply / tag*
+	›  ${prefix}unmark *reply / tag*
+	›  ${prefix}revoke
+	›  ${prefix}absen
+	›  ${prefix}link
+	›  ${prefix}sider
+	›  ${prefix}kicksider
+	›  ${prefix}antilink *on / off*
+	›  ${prefix}antivirtex *on / off*
+	›  ${prefix}filter *on / off*
+	›  ${prefix}game *on / off*
+	›  ${prefix}localonly *on / off*
+	›  ${prefix}left *on / off*
+	›  ${prefix}notify *on / off*
+	›  ${prefix}protect *on / off*
+	›  ${prefix}welcome *on / off*
+	›  ${prefix}group *close / open*
+	›  ${prefix}setdesc *text*
+	›  ${prefix}setname *text*
+	›  ${prefix}addlist
+	›  ${prefix}getlist
+	›  ${prefix}dellist
+	›  ${prefix}storelist'
+	›  ${prefix}textwel *text*
+	›  ${prefix}textleft *text*
+	
+${global.setting.footer}`
+}
+
+const submenu4 = (prefix) => {
+return `*❏* *S T I C K E R*
+
+	›  ${prefix}emo *emoticon*
+	›  ${prefix}emojimix
+	›  ${prefix}flat *emoticon*
+	›  ${prefix}smeme *text | text*
+	›  ${prefix}sticker *reply media*
+	›  ${prefix}telesticker *link*
+	›  ${prefix}toimg *reply sticker*
+	›  ${prefix}tomp4 *reply stiker*	
+	›  ${prefix}swm *pack | author*
+	
+${global.setting.footer}`
+}
+
+const submenu5 = (prefix) => {
+return `*❏* *J U S T - F O R - F U N*
+
+	›  ${prefix}sadboy
+	›  ${prefix}pacaran
+	›  ${prefix}sadgirl
+	›  ${prefix}bucin
+	›  ${prefix}senja
+	›  ${prefix}fakta
+	›  ${prefix}sindiran
+	›  ${prefix}kataanime
+	›  ${prefix}bokep
+	›  ${prefix}ometv
+	›  ${prefix}viral
+	›  ${prefix}desahancewek
+	›  ${prefix}desahancowok
+	
+${global.setting.footer}`
+}
+
+const submenu6 = (prefix) => {
+return `*❏*  *D O W N L O A D E R*
+
+	›  ${prefix}alquran *no_surat:ayat*
+	›  ${prefix}ig *link*
+	›  ${prefix}loli
+	›  ${prefix}drakor	
+	›  ${prefix}igs *username*
+	›  ${prefix}mediafire *link*
+	›  ${prefix}asupan *nama*
+	›  ${prefix}fb *link*
+	›  ${prefix}pin *link*	
+	›  ${prefix}apk *nama apk*		
+	›  ${prefix}play *judul lagu*
+	›  ${prefix}pinterest *nama*	
+	›  ${prefix}sticker *nama*	
+	›  ${prefix}asupan *hastag*	
+	›  ${prefix}tiktok *link*
+	›  ${prefix}tikmp3 *link*
+	›  ${prefix}tikwm *link*
+	›  ${prefix}twitter *link*
+	›  ${prefix}video *query*
+	›  ${prefix}yth *link*
+	›  ${prefix}ytmp3 *link*
+	›  ${prefix}ytmp4 *link*
+	›  ${prefix}yts *query*
+
+${global.setting.footer}`
+}
+
+const submenu7 = (prefix) => {
+return `*❏*   *T O O L S*
+
+	›  ${prefix}githubstalk	*username*
+	›  ${prefix}tag *text*
+	›  ${prefix}tagme
+	›  ${prefix}wame *text*
+	›  ${prefix}react *emoji*	
+	›  ${prefix}groupinfo	
+	›  ${prefix}del
+	›  ${prefix}afk *alasan*
+	›  ${prefix}rvo *reply view once*	
+	›  ${prefix}contact *@tag*	
+	›  ${prefix}transfer *@tag* nominal	
+	›  ${prefix}whatanime	
+	›  ${prefix}response *link*
+	›  ${prefix}google
+	›  ${prefix}tourl
+	›  ${prefix}short *link*
+	›  ${prefix}igstalk *username*		
+	›  ${prefix}sshp *link*
+	›  ${prefix}ssweb *link*
+	›  ${prefix}tomp3 *reply video*
+	›  ${prefix}tovn *reply audio*
+	›  ${prefix}translate *id text*
+	›  ${prefix}artinama *nama*	
+	›  ${prefix}urban *word*
+	
+${global.setting.footer}`
+}
+	
+const submenu8 = (prefix) => {
+return `*❏*   *S P E C I A L*
+	
+	›  ${prefix}admintools
+	›  ${prefix}adminlist
+	›  ${prefix}setmenu
+	›  ${prefix}storage
+	›  ${prefix}botinfo
+	›  ${prefix}check
+	›  ${prefix}botstat
+	›  ${prefix}groups
+	›  ${prefix}list *prem,asupan,ban,chat,error*
+	›  ${prefix}tools
+	›  ${prefix}runtime
+
+${global.setting.footer}`
+}
+
+const submenu9 = (prefix) => {
+return `*❏*  *S E T T I N G - G R O U P*
+
+	›  ${prefix}mute *1 / 0*
+	›  ${prefix}everyone
+	›  ${prefix}hidetag *text*
+	›  ${prefix}kick *reply / tag*
+	›  ${prefix}demote *reply / tag*
+	›  ${prefix}mark *reply / tag*
+	›  ${prefix}unmark *reply / tag*
+	›  ${prefix}revoke
+	›  ${prefix}antilink *on / off*
+	›  ${prefix}antivirtex *on / off*
+	›  ${prefix}filter *on / off*
+	›  ${prefix}game *on / off*
+	›  ${prefix}localonly *on / off*
+	›  ${prefix}left *on / off*
+	›  ${prefix}notify *on / off*
+	›  ${prefix}protect *on / off*
+	›  ${prefix}welcome *on / off*
+	›  ${prefix}group *close / open*
+	›  ${prefix}setdesc *text*
+	›  ${prefix}setname *text*
+	›  ${prefix}textwel *text*
+	›  ${prefix}textout *text*
+	
+${global.setting.footer}`
+}
+
+const submenu10 = (prefix) => {
+return `*❏*  *O W N E R - T O O L S*
+
+	›  ${prefix}omute *1 / 0*
+	›  ${prefix}onotify *on / off*
+	›  ${prefix}oleft *on / off*
+	›  ${prefix}owelcome *on / off*
+	›  ${prefix}out
+	›  ${prefix}okick *reply / tag*
+	›  ${prefix}otagall *text*
+	›  ${prefix}addown *reply / tag*
+	›  ${prefix}delown *reply / tag*
+	›  ${prefix}listcmd
+	›  ${prefix}setcmd *reply sticker*
+	›  ${prefix}delcmd *reply sticker*
+	›  ${prefix}autodownload *on / off*
+	›  ${prefix}addprefix *prefix*
+	›  ${prefix}addprem
+	›  ${prefix}bc *tag/m/gc*
+	›  ${prefix}delprefix *prefix*
+	›  ${prefix}disable *command*
+	›  ${prefix}enable *command*
+	›  ${prefix}gc *option*
+	›  ${prefix}groupmode *on / off*
+	›  ${prefix}join *link*
+	›  ${prefix}multiprefix *on / off*
+	›  ${prefix}restart
+	›  ${prefix}self *on / off*
+	›  ${prefix}setpp *reply photo*
+	›  ${prefix}setprefix *prefix*
+	›  ${prefix}setmsg *text*
+	›  ${prefix}setcover *reply foto*
+	›  ${prefix}setheader *text*
+	›  ${prefix}setfooter *text*
+	›  ${prefix}setwm *pack | author*	
+	›  ${prefix}backup
+	›  ${prefix}ban *reply / tag*
+	›  ${prefix}bcgc *reply chat*
+	›  ${prefix}block  *reply / tag*
+	›  ${prefix}db
+	›  ${prefix}unblock  *reply / tag*
+	›  ${prefix}unban *reply / tag*
+	›  ${prefix}omark *reply / tag*
+	›  ${prefix}ounmark *reply / tag*
+	›  ${prefix}spamtag *amount | text*
+	›  >  -- (JS Eval)
+	›  => -- (JS Eval w/ Return)
+	›  $ -- (Command Line)
+	
+${global.setting.footer}`
+}

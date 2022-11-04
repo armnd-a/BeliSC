@@ -1,0 +1,21 @@
+exports.run = {
+   usage: ['claim'],
+   async: async (m, {
+      client
+   }) => {
+      let user = global.users[m.sender]
+      let timeClaim = 3600000
+      let claimed = new Date(user.lastclaim + timeClaim)
+      let timeout = claimed - new Date()
+      if (new Date - user.lastclaim > timeClaim) {
+         client.fakeWa(m.chat, `*Selamat, kamu mendapat Uang Rp.250.000 dan +50 limit 🎉*`), global.setting.header, m.sender, m)
+         user.point += 250000
+         user.limit += 50
+         user.lastclaim = new Date() * 1
+      } else {
+         client.fakeWa(m.chat, `*Kamu sudah melakukan klaim silahkan klaim kembali di jam berikutnya.*\n\n*Timeout : [ ${Func.toTime(timeout)} ]*`, global.setting.header, m.sender, m)
+      }
+   },
+   error: false,
+   group: true
+}

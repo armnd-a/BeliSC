@@ -1,0 +1,427 @@
+exports.run = {
+   usage: ['menu', 'help', 'bot', 'admintools', 'tools'],
+   async: async (m, {
+      client,
+      isPrefix,
+      command,
+      isOwner
+   }) => {
+      try {
+         if (/menu|help|bot/.test(command)) {
+            let menuType = global.db.setting.setmenu
+            const link = global.db.setting.link
+            client.menu = client.menu ? client.menu : {}
+            let id = m.chat
+            try {
+               pic = await Func.fetchBuffer(await client.profilePictureUrl(m.sender, 'image'))
+            } catch {
+               pic = await Func.fetchBuffer('./media/images/thumb.jpg')
+            }
+            if (!isOwner && (id in client.menu)) {
+               global.db.statistic[command].hitstat -= 1
+               return client.reply(m.chat, `Ma'af @${m.sender.split`@`[0]} ^\nUntuk menghindari spam, menu di tampilkan setiap *3 menit* sekali.`, client.menu[id][0])
+            }
+            let buttons = [{
+               urlButton: {
+                        displayText: `OWNER`,
+                        url: `https://wa.me/62882002088799?text=sewabot+bang`
+                     }
+                  },
+                  {
+                     quickReplyButton: {
+                        displayText: 'TOP UP 💎',
+                        id: `${isPrefix}shop`
+                     }
+                  },
+                  {
+                     quickReplyButton: {
+                        displayText: 'PREMIUM 🏅',
+                        id: `${isPrefix}premium`
+                     }
+                  }
+               ]
+            if (menuType == 1) {
+               client.menu[id] = [
+                  await client.fakeGroupLink(m.chat, menu(m, readmore, global.db.setting, isPrefix), global.db.setting.header, m.sender, m),
+                  setTimeout(() => {
+                     delete client.menu[id]
+                  }, 180000)
+               ]
+            } else if (menuType == 2) {
+               client.menu[id] = [
+                  await client.fakeStory(m.chat, menu(m, readmore, global.db.setting, isPrefix), global.db.setting.header),
+                  setTimeout(() => {
+                     delete client.menu[id]
+                  }, 180000)
+               ]
+            } else if (menuType == 3) {
+               client.menu[id] = [
+                  await client.sendTemplateButton(m.chat, global.db.setting.cover, menu(m, readmore, global.db.setting, isPrefix), '                       Ⓟ premium | Ⓛ limit', buttons, {
+                     document: true,
+                     name: '𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 𝘉𝘰𝘵'
+                  }),
+                  setTimeout(() => {
+                     delete client.menu[id]
+                  }, 180000)
+               ]
+            } else if (menuType == 4) {
+               client.menu[id] = [
+                  await client.sendTemplateButton(m.chat, global.db.setting.cover, menu(m, readmore, global.db.setting, isPrefix), '                       Ⓟ premium | Ⓛ limit', buttons, {
+                     location: true
+                  }),
+                  setTimeout(() => {
+                     delete client.menu[id]
+                  }, 180000)
+               ]
+            } else if (menuType == 5) {
+               client.menu[id] = [
+                  await client.sendTemplateButton(m.chat, await Func.fetchBuffer('./media/video/video.mp4'), menu(m, readmore, global.db.setting, isPrefix), '                         Ⓟ premium | Ⓛ limit', buttons, {
+                     gif: true
+                  }),
+                  setTimeout(() => {
+                     delete client.menu[id]
+                  }, 180000)
+               ]
+            } else if (menuType == 6) {
+               client.menu[id] = [
+                  await client.sendTemplateButton(m.chat, global.db.setting.cover, menu(m, readmore, global.db.setting, isPrefix), '                       Ⓟ premium | Ⓛ limit', buttons),
+                  setTimeout(() => {
+                     delete client.menu[id]
+                  }, 180000)
+               ]
+            } else if (menuType == 7) {
+               client.menu[id] = [
+                  await client.sendTemplateButton(m.chat, await Func.fetchBuffer('./media/video/video.mp4'), menu(m, readmore, global.db.setting, isPrefix), '                         Ⓟ premium | Ⓛ limit', buttons),
+                  setTimeout(() => {
+                     delete client.menu[id]
+                  }, 180000)
+               ]
+            } else if (menuType == 8) {
+            	let rows = [{
+            		title: 'I N F O R M A T I O N',
+            		rowId: `${isPrefix}submenu 1`,
+            		description: `cek profile user`
+            	}, {
+            		title: 'M O D E - G A M E',
+            		rowId: `${isPrefix}submenu 2`,
+            		description: `list permainan`
+            	}, {
+            		title: 'A D M I N',
+            		rowId: `${isPrefix}submenu 3`,
+            		description: `mengatur antilink,welcome,dll`
+            	}, {
+            		title: 'S T I C K E R',
+            		rowId: `${isPrefix}submenu 4`,
+            		description: `tools untuk stiker`
+            	}, {
+            		title: 'J U S T - F O R - F U N',
+            		rowId: `${isPrefix}submenu 5`,
+            		description: `bucin, sadboy, sadgirl`
+            	}, {
+            		title: 'D O W N L O A D E R',
+            		rowId: `${isPrefix}submenu 6`,
+            		description: `cukup kirimkan link sosial media`
+            	}, {
+            		title: 'T O O L S',
+            		rowId: `${isPrefix}submenu 7`,
+            		description: `instagram stalk dll`
+            	}, {
+            		title: 'S P E C I A L',
+            		rowId: `${isPrefix}submenu 8`,
+            		description: `hanya untuk owner`
+            	}, {
+            		title: 'S E T T I N G - G R O U P',
+            		rowId: `${isPrefix}submenu 9`,
+            		description: `welcome,antilink,antivirtex, dll`
+            	}, {
+            		title: 'O W N E R - T O O L S',
+            		rowId: `${isPrefix}submenu 10`,
+            		description: `hanya untuk owner`
+            	}]
+            	await client.sendList(m.chat, '', `Hai ${m.pushName || Beib} 🏅\n\n“${setting.msg}”\n\nUntuk bisa menggunakan bot di personal chat (PC) kamu harus  upgrade ke premium user\nJika ingin upgrade ke premium silahkan ketik *.premium*\n\nTap Dibawah Untuk menampilkan list menu 📮`, '', 'Tap!', rows, m)  
+            }
+         }
+         if (/admintools/.test(command)) return client.fakeStory(m.chat, admin(isPrefix), global.db.setting.header)
+         if (/tools/.test(command)) {
+            if (!isOwner) return client.reply(m.chat, global.status.owner, m)
+            return client.fakeStory(m.chat, tools(isPrefix), global.db.setting.header)
+         }
+      } catch (e) {
+         console.log(e)
+      }
+   },
+   error: false,
+   cache: true,
+   location: __filename
+}
+
+const readmore = String.fromCharCode(8206).repeat(4001)
+const menu = (m, readmore, setting, prefix) => {
+   return `Hai, ${/8|9/.test(global.db.setting.setmenu) ? Func.greeting('@' + m.sender.replace(/@.+/,'')) : Func.greeting(m.pushName || 'Beib')}
+
+“${setting.msg}”
+
+Untuk bisa menggunakan bot di personal chat (PC) kamu harus  upgrade ke premium user.
+Jika ingin upgrade ke premium silahkan kirim *.premium*
+
+Mode : ${setting.groupmode ? '*Khusus Group*' : '*Public*'}
+${readmore}
+
+1.       *D O W N L O A D E R*
+
+	Ⓛ  ${prefix}alquran *no_surat:ayat*
+	Ⓛ  ${prefix}ig *link*
+	Ⓛ  ${prefix}wattpad	*judul*
+	Ⓛ  ${prefix}drakor *judul*
+	Ⓛ  ${prefix}anime *judul*
+	Ⓛ  ${prefix}film *judul*	
+	Ⓛ  ${prefix}igs *username*
+	Ⓟ  ${prefix}mediafire *link*
+	Ⓟ  ${prefix}asupan *nama*
+	Ⓟ  ${prefix}fb *link*
+	Ⓛ  ${prefix}pin *link*	
+	Ⓟ  ${prefix}apk *nama apk*		
+	Ⓛ  ${prefix}play *judul lagu*
+	Ⓛ  ${prefix}pinterest *nama*	
+	Ⓛ  ${prefix}sticker *nama*	
+	Ⓟ  ${prefix}asupan *hastag*	
+	Ⓛ  ${prefix}tiktok *link*
+	Ⓛ  ${prefix}tikmp3 *link*
+	Ⓛ  ${prefix}tikwm *link*
+	Ⓛ  ${prefix}twitter *link*
+	Ⓟ  ${prefix}video *query*
+	Ⓟ  ${prefix}yth *link*
+	Ⓛ  ${prefix}ytmp3 *link*
+	Ⓛ  ${prefix}ytmp4 *link*
+	Ⓟ  ${prefix}ytsearch
+
+2.       *M O D E - G A M E*
+
+	Ⓛ  ${prefix}brainout
+	Ⓛ  ${prefix}coin *A* / *B*
+	Ⓛ  ${prefix}math *mode*
+	Ⓛ  ${prefix}riddle
+	Ⓛ  ${prefix}slot
+	Ⓛ  ${prefix}spin *point*
+	Ⓛ  ${prefix}ttt
+	Ⓛ  ${prefix}ttt *room*
+	Ⓛ  ${prefix}tictactoe
+	Ⓛ  ${prefix}tebaklirik
+	Ⓛ  ${prefix}tebaktebakan
+	Ⓛ  ${prefix}caklontong
+	Ⓛ  ${prefix}whatsong
+	Ⓛ  ${prefix}whatword
+	Ⓛ  ${prefix}whoami
+	Ⓛ  ${prefix}truth
+	Ⓛ  ${prefix}dare
+	Ⓛ  ${prefix}apakah
+	Ⓛ  ${prefix}kapankah
+	Ⓛ  ${prefix}siapakah
+
+3.       *K H U S U S - A D M I N*
+
+	️Ⓐ  ${prefix}mute *1 / 0*
+	Ⓐ  ${prefix}tagall
+	Ⓐ  ${prefix}hidetag *text*
+	Ⓐ  ${prefix}kick *reply / tag*
+	Ⓐ  ${prefix}demote *reply / tag*
+	Ⓐ  ${prefix}mark *reply / tag*
+	Ⓐ  ${prefix}unmark *reply / tag*
+	Ⓐ  ${prefix}revoke
+	Ⓐ  ${prefix}absen
+	Ⓐ  ${prefix}link
+	Ⓐ  ${prefix}sider
+	Ⓐ  ${prefix}kicksider
+	Ⓐ  ${prefix}antilink *on / off*
+	Ⓐ  ${prefix}antivirtex *on / off*
+	Ⓐ  ${prefix}filter *on / off*
+	Ⓐ  ${prefix}game *on / off*
+	Ⓐ  ${prefix}localonly *on / off*
+	Ⓐ  ${prefix}left *on / off*
+	Ⓐ  ${prefix}notify *on / off*
+	Ⓐ  ${prefix}protect *on / off*
+	Ⓐ  ${prefix}welcome *on / off*
+	Ⓐ  ${prefix}group *close / open*
+	Ⓐ  ${prefix}setdesc *text*
+	Ⓐ  ${prefix}setname *text*
+	Ⓐ  ${prefix}textwel *text*
+	Ⓐ  ${prefix}textleft *text*
+
+4.       *S T I C K E R*
+
+	Ⓛ  ${prefix}emo *emoticon*
+	Ⓟ  ${prefix}emojimix
+	Ⓛ  ${prefix}flat *emoticon*
+	Ⓟ  ${prefix}smeme *text | text*
+	Ⓛ  ${prefix}sticker *reply media*
+	Ⓛ  ${prefix}telesticker *link*
+	Ⓛ  ${prefix}toimg *reply sticker*
+	Ⓛ  ${prefix}tomp4 *reply stiker*	
+	Ⓟ  ${prefix}swm *pack | author*	
+
+5.       *J U S T - F O R - F U N*
+
+	Ⓛ  ${prefix}sadboy
+	Ⓛ  ${prefix}pacaran
+	Ⓛ  ${prefix}sadgirl
+	Ⓛ  ${prefix}bucin
+	Ⓛ  ${prefix}senja
+	Ⓛ  ${prefix}fakta
+	Ⓛ  ${prefix}tag *text*
+	Ⓛ  ${prefix}tagme
+	Ⓛ  ${prefix}wame *text*
+	Ⓛ  ${prefix}react *emoji*
+	Ⓛ  ${prefix}artinama *nama*	
+	Ⓛ  ${prefix}urban *word*
+	Ⓛ  ${prefix}sindiran
+	Ⓛ  ${prefix}kataanime
+	Ⓟ  ${prefix}bokep
+	Ⓟ  ${prefix}ometv
+	Ⓟ  ${prefix}viral
+	Ⓛ  ${prefix}loli
+	Ⓟ  ${prefix}desahancewek
+	Ⓟ  ${prefix}desahancowok
+
+6.       *I N F O R M A T I O N*
+
+	Ⓕ  ${prefix}buy
+	Ⓕ  ${prefix}claim
+	Ⓕ  ${prefix}limit
+	Ⓕ  ${prefix}me
+	Ⓕ  ${prefix}point
+	Ⓕ  ${prefix}profile
+	Ⓕ  ${prefix}toplocal
+	Ⓕ  ${prefix}topglobal
+	Ⓕ  ${prefix}topuser
+	Ⓕ  ${prefix}topuserlocal
+
+7.       *T O O L S*
+
+	Ⓛ  ${prefix}githubstalk
+	Ⓛ  ${prefix}groupinfo	
+	Ⓛ  ${prefix}del
+	Ⓛ  ${prefix}addlist
+	Ⓛ  ${prefix}getlist
+	Ⓛ  ${prefix}dellist
+	Ⓛ  ${prefix}storelist
+	Ⓛ  ${prefix}artinama2
+	Ⓛ  ${prefix}afk *alasan*
+	Ⓛ  ${prefix}rvo *reply view once*	
+	Ⓛ  ${prefix}contact *@tag*	
+	Ⓛ  ${prefix}transfer *@tag* nominal	
+	Ⓛ  ${prefix}whatanime	
+	Ⓛ  ${prefix}res *link*
+	Ⓛ  ${prefix}google
+	Ⓛ  ${prefix}tourl
+	Ⓛ  ${prefix}short *link*
+	Ⓛ  ${prefix}igstalk *username*		
+	Ⓛ  ${prefix}sshp *link*
+	Ⓛ  ${prefix}ssweb *link*
+	Ⓛ  ${prefix}tomp3 *reply video*
+	Ⓛ  ${prefix}tovn *reply audio*
+	Ⓛ  ${prefix}translate *id text*	
+	Ⓛ  ${prefix}admintools
+	Ⓛ  ${prefix}adminlist
+	Ⓛ  ${prefix}setmenu
+	Ⓛ  ${prefix}storage
+	Ⓛ  ${prefix}botinfo
+	Ⓛ  ${prefix}check
+	Ⓛ  ${prefix}stat
+	Ⓛ  ${prefix}groups
+	Ⓛ  ${prefix}list
+	Ⓛ  ${prefix}tools
+	Ⓛ  ${prefix}runtime
+
+${global.db.setting.footer}
+`}
+
+const admin = (prefix) => {
+   return `乂  *H E L P E R*
+
+	◦  ${prefix}mute *1 / 0*
+	◦  ${prefix}everyone
+	◦  ${prefix}hidetag *text*
+	◦  ${prefix}kick *reply / mention*
+	◦  ${prefix}demote *reply / mention*
+	◦  ${prefix}mark *reply / mention*
+	◦  ${prefix}unmark *reply / mention*
+	◦  ${prefix}revoke
+
+乂  *M O D E R A T I O N*
+
+	◦  ${prefix}autosticker *on / off*
+	◦  ${prefix}antilink *on / off*
+	◦  ${prefix}antivirtex *on / off*
+	◦  ${prefix}filter *on / off*
+	◦  ${prefix}game *on / off*
+	◦  ${prefix}localonly *on / off*
+	◦  ${prefix}left *on / off*
+	◦  ${prefix}notify *on / off*
+	◦  ${prefix}protect *on / off*
+	◦  ${prefix}welcome *on / off*
+  
+乂  *S E T T I N G S*
+
+	◦  ${prefix}group *close / open*
+	◦  ${prefix}setdesc *text*
+	◦  ${prefix}setname *text*
+	◦  ${prefix}textwel *text*
+	◦  ${prefix}textout *text*
+
+${global.db.setting.footer}
+`
+}
+
+const tools = (prefix) => {
+   return `乂  *B Y P A S S*
+
+	◦  ${prefix}oautosticker *on / off*
+	◦  ${prefix}oantilink *on / off*
+	◦  ${prefix}oantivirtex *on / off*
+	◦  ${prefix}ofilter *on / off*
+	◦  ${prefix}ogame *on / off*
+	◦  ${prefix}olocalonly *on / off*
+	◦  ${prefix}oleft *on / off*
+	◦  ${prefix}onotify *on / off*
+	◦  ${prefix}oprotect *on / off*
+	◦  ${prefix}omute *1 / 0*
+	◦  ${prefix}ohidetag *text*
+	◦  ${prefix}oleave
+	◦  ${prefix}okick *reply / mention*
+	◦  ${prefix}otagall *text*
+	◦  ${prefix}welcome *on / off*
+
+乂  *M O D E R A T I O N*
+
+	◦  ${prefix}addown *reply / mention*
+	◦  ${prefix}delown *reply / mention*
+	◦  ${prefix}addmod *reply / mention*
+	◦  ${prefix}delmod *reply / mention*
+	◦  ${prefix}listcmd
+	◦  ${prefix}setcmd *reply sticker*
+	◦  ${prefix}delcmd *reply sticker*  
+
+乂  *H E L P E R S*
+
+	◦  ${prefix}backup
+	◦  ${prefix}ban *reply / mention*
+	◦  ${prefix}bcgc *reply chat*
+	◦  ${prefix}block  *reply / mention*
+	◦  ${prefix}db
+	◦  ${prefix}unblock  *reply / mention*
+	◦  ${prefix}unban *reply / mention*
+	◦  ${prefix}omark *reply / mention*
+	◦  ${prefix}ounmark *reply / mention*
+	◦  ${prefix}spamtag *amount | text*
+	◦  ${prefix}tax *percent* (optional)
+	◦  ${prefix}topup *amount* (optional)
+
+乂  *A D V A N C E*
+
+	◦  >  -- (JS Eval)
+	◦  => -- (JS Eval w/ Return)
+	◦  $ -- (Command Line)
+
+${global.db.setting.footer}
+`
+}

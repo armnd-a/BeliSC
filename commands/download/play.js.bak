@@ -1,0 +1,51 @@
+exports.run = {
+   usage: ['play'],
+   async: async (m, {
+      client,
+      text,
+      isPrefix,
+      command,
+      isPrem,
+      isOwner
+   }) => {
+      try {
+         if (!text) return client.reply(m.chat, `• ${Func.texted('bold', `Example`)} : ${isPrefix + command} lathi`, m)
+         if (!isOwner && text.match(/(bugil|bokep|hentai|sex|desah)/gi)) {
+            client.updateBlockStatus(m.sender, 'block')
+            let user = global.users
+            user[m.sender].banned = true
+            let banned = 0
+            for (let jid in user) {
+               if (user[jid].banned) banned++
+            }
+            return client.reply(m.chat, `${text}\n\nKata kunci tidak diperbolehkan, gunakan bot ini untuk hal-hal positif dan sekarang nomor Anda telah *banned* and *blocked.*\n\nJika Anda ingin *unban* and *unblock* bayar saya dengan uang Anda dengan harga 5K, kirim *${isPrefix}owner*`, m)
+         }
+         client.reply(m.chat, global.status.getdata, m)
+         let json = await scrap.play(text)
+         if (!json.status) return client.reply(m.chat, Func.jsonFormat(json), m)
+         let caption = `𝙋 𝙇 𝘼 𝙔 - 𝙈 𝙐 𝙎 𝙄 𝘾 🌈\n\n`
+         caption += `	•💬 Judul : ${json.title}\n`
+         caption += `	•🖇️ Channel : ${json.channel}\n`
+         caption += `	•🥇️ Upload : ${json.publish}\n`
+         caption += `	•⚙️ Ukuran : ${json.data.size}\n`
+         caption += `	•⏰️ Durasi : ${json.duration}\n`
+         caption += `	•🔥 Kualitas : ${json.data.quality}\n\n`
+         caption += global.setting.footer
+         if (premSize.oversize && !isPrem) return client.reply(m.chat, `User free hanya bisa mendownload di bawah 30 MB, silahkan download sendiri melalui link berikut : ${await (await Func.shorten(json.data.url)).data.url}`, m)
+         let chSize = Func.sizeLimit(json.data.size, global.max_upload)
+         if (chSize.oversize) return client.reply(m.chat, `Ukuran file (${json.data.size}) melebihi batas maksimum, silahkan download sendiri melalui link berikut : ${await (await Func.shorten(json.data.url)).data.url}`, m)
+         client.sendFile(m.chat, json.thumbnail, 'image.jpg', caption, m).then(() => {
+            client.sendFile(m.chat, json.data.url, json.data.filename, '', m, {
+               document: true
+            })
+         })
+      } catch (e) {
+         console.log(e)
+         return client.reply(m.chat, global.status.error, m)
+      }
+   },
+   error: false,
+   limit: true,
+   cache: true,
+   location: __filename
+}
