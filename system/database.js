@@ -51,7 +51,7 @@ module.exports = (m) => {
          if (!isNumber(group.activity)) group.activity = new Date * 1
          if (!('banned' in group)) group.banned = false
          if (!('mute' in group)) group.mute = false
-         if (!('game' in group)) group.game = false
+         if (!('game' in group)) group.game = true
          if (!('welcome' in group)) group.welcome = true
          if (!('textwel' in group)) group.textwel = ''
          if (!('left' in group)) group.left = true
@@ -74,7 +74,7 @@ module.exports = (m) => {
             activity: new Date * 1,
             banned: false,
             mute: false,
-            game: false,
+            game: true,
             welcome: true,
             textwel: '',
             left: true,
