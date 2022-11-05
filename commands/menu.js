@@ -188,6 +188,7 @@ const menu = async (m, readmore, setting, prefix) => {
    let limit = [...new Set(Object.entries(global.db.users).filter(([v, x]) => x.limit > 0).map(([v, x]) => x.limit))]
    return `${/8|9/.test(global.db.setting.setmenu) ? Func.greeting('@' + m.sender.replace(/@.+/,'')) : Func.greeting(m.pushName || 'Beib')} (Lv. ${Func.level(global.db.users[m.sender].point)[0]})
 Saldo Rp. ${Func.h2k(global.db.users[m.sender].point)}
+*Download* : 80.61 mbps\n❏ *Upload* : 1006.27 mbps\n❏ *Response* : 3365 ms', m)
 
 Mode : ${setting.groupmode ? '*Khusus Group*' : '*Public*'}
 ${readmore}
