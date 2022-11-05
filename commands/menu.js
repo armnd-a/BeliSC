@@ -450,7 +450,7 @@ ${readmore}
            client.sendMessageModify(m.chat, captions, m, {
                 title: 'ılılllıllılllıllıılılllıllılllıllı\n© NuxL-Bot WhatsApp',
                 largeThumb: true,
-                thumbnail: await Func.fetchBuffer('https://telegra.ph/file/f8a923158032e0e6b6eb9.jpg'),
+                thumbnail:  pic,
                 url: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW',
              })
 
