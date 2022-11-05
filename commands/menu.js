@@ -447,12 +447,7 @@ ${readmore}
  × ​ .​groups
  × ​ .​list
  × ​ .​tools`}
-           client.sendMessageModify(m.chat, captions, m, {
-                title: 'ılılllıllılllıllıılılllıllılllıllı\n© NuxL-Bot WhatsApp',
-                largeThumb: true,
-                url: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW',
-             })
-
+           
 const admin = (prefix) => {
    return `❏  *GROUP SETTING*
 
