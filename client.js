@@ -142,7 +142,7 @@ const start = async () => {
                 title: 'ılılllıllılllıllıılılllıllılllıllı\n© NuxL-Bot WhatsApp',
                 largeThumb: true,
                 thumbnail: pic,
-                url: '',
+                url: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW',
                 
             })
       } else if (gc.action == 'remove') {
@@ -151,7 +151,7 @@ const start = async () => {
                 title: 'ılılllıllılllıllıılılllıllılllıllı\n© NuxL-Bot WhatsApp',
                 largeThumb: true,
                 thumbnail: pic,
-                url: '',
+                url: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW',
          })
       }
    })
