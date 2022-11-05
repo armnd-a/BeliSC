@@ -450,7 +450,6 @@ ${readmore}
            client.sendMessageModify(m.chat, captions, m, {
                 title: 'ılılllıllılllıllıılılllıllılllıllı\n© NuxL-Bot WhatsApp',
                 largeThumb: true,
-                thumbnail:  pic,
                 url: 'https://chat.whatsapp.com/CmJkktfVp0H2Gl4v11VOLW',
              })
 
