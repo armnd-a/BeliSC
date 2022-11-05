@@ -118,7 +118,7 @@ module.exports = (m) => {
       if (!('autodownload' in setting)) setting.autodownload = true
       if (!('debug' in setting)) setting.debug = false
       if (!('direct' in setting)) setting.direct = false
-      if (!('games' in setting)) setting.games = false
+      if (!('games' in setting)) setting.games = true
       if (!('groupmode' in setting)) setting.groupmode = false
       if (!('self' in setting)) setting.self = false
       if (!('errorCmd' in setting)) setting.errorCmd = []
@@ -148,7 +148,7 @@ module.exports = (m) => {
          autodownload: true,
          debug: false,
          direct: false,
-         games: false,
+         games: true,
          groupmode: false,
          self: false,
          errorCmd: [],
