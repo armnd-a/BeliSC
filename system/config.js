@@ -1,5 +1,5 @@
 global.owner = '6287823406145'
-global.max_upload = 30 // 30MB (1 = 1MB)
+global.max_upload = 500 // 2000MB (1 = 1MB)
 global.status = {
    wait: Func.texted('bold', 'Tunggu sebentar . . .'),
    invalid: Func.texted('bold', 'Link salah kak!'),
