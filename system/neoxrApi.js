@@ -1,9 +1,9 @@
 class NeoxrApi {
-   baseUrl = 'https://api.neoxr.my.id/api'
+   baseUrl = 'https://api-diox.herokuapp.com'
    apiKey = null
 
    constructor(apiKey) {
-      this.apiKey = apiKey || 'pelerfaruq'
+      this.apiKey = apiKey || 'dioxapi'
    }
 
    ig = async (url) => {
